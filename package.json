@@ -1,0 +1,15 @@
+{
+  "name": "resume",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "npx playwright install chromium",
+    "build:html": "node scripts/build-html.mjs",
+    "build:pdf": "node scripts/render-pdf.mjs",
+    "build": "npm run build:html && npm run build:pdf",
+    "serve": "python3 -m http.server 8000 -d dist"
+  },
+  "devDependencies": {
+    "playwright": "1.58.1"
+  }
+}
