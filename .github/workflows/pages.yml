@@ -2,7 +2,11 @@ name: Build & Deploy Resume (EN+RU, HTML→PDF)
 
 on:
   push:
-    branches: ["main", "master"]
+    branches: ["master", "master"]
+
+env:
+  PUBLIC_REPO: wepaleen/resume
+  PUBLIC_BRANCH: master
 
 permissions:
   contents: read
@@ -55,6 +59,17 @@ jobs:
 
       - name: Render PDFs (HTML -> PDF)
         run: node scripts/render-pdf.mjs
+
+      - name: Publish to public repo
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone https://x-access-token:${{ secrets.PUBLIC_REPO_PAT }}@github.com/${{ env.PUBLIC_REPO }}.git public
+          rsync -a --delete dist/ public/
+          cd public
+          git add .
+          git commit -m "Publish $(date -u +%Y-%m-%dT%H:%M:%SZ)" || echo "No changes"
+          git push origin ${{ env.PUBLIC_BRANCH }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
