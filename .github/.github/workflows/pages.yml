@@ -1,0 +1,71 @@
+name: Build & Deploy Resume (EN+RU, HTML→PDF)
+
+on:
+  push:
+    branches: ["main", "master"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare dist
+        run: |
+          mkdir -p dist dist/ru
+          cp style.css dist/style.css
+          cp style.css dist/ru/style.css
+
+      - name: Build HTML (EN)
+        uses: docker://pandoc/latex:latest
+        with:
+          args: >
+            resume.en.md
+            --standalone
+            --css style.css
+            -o dist/index.html
+
+      - name: Build HTML (RU)
+        uses: docker://pandoc/latex:latest
+        with:
+          args: >
+            resume.ru.md
+            --standalone
+            --css style.css
+            -o dist/ru/index.html
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright (Chromium)
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Render PDFs (HTML -> PDF)
+        run: node scripts/render-pdf.mjs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
