@@ -1,24 +1,8 @@
 # Your Name — DevOps Engineer
 
-<div class="split meta">
-  <span>Kazan (UTC+3)</span>
-  <span>•</span>
-  <span>Remote / Hybrid</span>
-  <span>•</span>
-  <span>Telegram: <a href="https://t.me/wwdcd2">@wwdcd2</a></span>
-  <span>•</span>
-  <span><a href="mailto:you@example.com">you@example.com</a></span>
-  <span>•</span>
-  <span><a href="https://github.com/you">GitHub</a></span>
-  <span>•</span>
-  <span><a href="https://linkedin.com/in/you">LinkedIn</a></span>
-</div>
+Kazan (UTC+3) • Remote/Hybrid • Telegram: [@wwdcd2](https://t.me/wwdcd2) • [you@example.com](mailto:you@example.com) • [GitHub](https://github.com/you) • [LinkedIn](https://linkedin.com/in/you)
 
-<div class="split">
-  <a class="btn" href="resume.pdf">Download PDF</a>
-  <span class="meta">•</span>
-  <a class="meta" href="ru/">Русская версия</a>
-</div>
+<a class="btn" href="resume.pdf">Download PDF</a> • <a class="lang" href="ru/">Русская версия</a>
 
 ## Summary
 DevOps Engineer with 2+ years of hands-on experience building and operating Kubernetes-based platforms. Currently migrating workloads from AWS EKS to Yandex Managed Service for Kubernetes (MKS): moving services, setting up environments, and standardizing deployments with Helm. IaC-first (Terraform), configuration automation with Ansible, with a strong focus on observability and predictable releases.

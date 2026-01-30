@@ -65,14 +65,19 @@ small{color:var(--muted)}
 
 .btn{
   display:inline-block;
-  margin: 10px 0 0;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 600;
+  padding:8px 12px;
+  border-radius:10px;
+  background:#dbeafe;
+  color:#2563eb;
+  font-weight:600;
 }
-.btn:hover{ text-decoration:none; filter: brightness(0.98); }
+.btn:hover{ text-decoration:none; filter:brightness(0.98); }
+
+.lang{ color:#475569; }
+
+@media print{
+  .btn, .lang { display:none !important; }
+}
 
 .meta{
   color: var(--muted);

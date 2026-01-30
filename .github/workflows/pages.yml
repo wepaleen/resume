@@ -1,4 +1,4 @@
-name: Build & Deploy Resume (EN + RU)
+name: Build & Deploy Resume (EN+RU, HTML→PDF)
 
 on:
   push:
@@ -25,7 +25,6 @@ jobs:
           cp style.css dist/style.css
           cp style.css dist/ru/style.css
 
-      # EN -> /
       - name: Build HTML (EN)
         uses: docker://pandoc/latex:latest
         with:
@@ -35,16 +34,6 @@ jobs:
             --css style.css
             -o dist/index.html
 
-      - name: Build PDF (EN)
-        uses: docker://pandoc/latex:latest
-        with:
-          args: >
-            resume.en.md
-            -o dist/resume.pdf
-            --pdf-engine=xelatex
-            -V geometry:margin=1in
-
-      # RU -> /ru/
       - name: Build HTML (RU)
         uses: docker://pandoc/latex:latest
         with:
@@ -54,16 +43,21 @@ jobs:
             --css style.css
             -o dist/ru/index.html
 
-      - name: Build PDF (RU)
-        uses: docker://pandoc/latex:latest
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          args: >
-            resume.ru.md
-            -o dist/ru/resume.pdf
-            --pdf-engine=xelatex
-            -V geometry:margin=1in
+          node-version: "20"
 
-      - name: Upload artifact
+      - name: Install Playwright (Chromium)
+        run: |
+          npm init -y
+          npm i -D playwright
+          npx playwright install --with-deps chromium
+
+      - name: Render PDFs (HTML -> PDF)
+        run: node scripts/render-pdf.mjs
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -74,5 +68,5 @@ jobs:
     environment:
       name: github-pages
     steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
