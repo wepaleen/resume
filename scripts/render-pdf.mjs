@@ -9,10 +9,14 @@ async function render(inputHtmlPath, outputPdfPath) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  await page.emulateMedia({ media: "screen", colorScheme: "light" });
+  await page.emulateMedia({
+    media: "screen",
+    colorScheme: "light",
+    reducedMotion: "reduce",
+  });
 
   const url = "file://" + path.resolve(inputHtmlPath);
-  await page.goto(url, { waitUntil: "load" });
+  await page.goto(url, { waitUntil: "networkidle" });
 
   await page.pdf({
     path: outputPdfPath,

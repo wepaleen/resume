@@ -2,7 +2,7 @@
 
 Kazan (UTC+3) • Remote / Hybrid • Telegram: [@wwdcd2](https://t.me/wwdcd2) • [you@example.com](mailto:you@example.com) • [GitHub](https://github.com/you) • [LinkedIn](https://linkedin.com/in/you)
 
-**[Download PDF](resume.pdf){.pill download}** • [Русская версия](ru/){.switch}
+**[Download PDF](resume.pdf){.pill download="download"}** • [Русская версия](ru/){.switch}
 
 ## Summary
 DevOps Engineer with 2+ years of hands-on experience building and operating Kubernetes-based platforms. Currently migrating workloads from AWS EKS to Yandex Managed Service for Kubernetes (MKS): moving services, setting up environments, and standardizing deployments with Helm. IaC-first (Terraform), configuration automation with Ansible, with a strong focus on observability and predictable releases.

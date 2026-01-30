@@ -2,7 +2,7 @@ name: Build & Deploy Resume (EN+RU, HTML→PDF)
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main", "master"]
 
 permissions:
   contents: read
@@ -50,8 +50,7 @@ jobs:
 
       - name: Install Playwright (Chromium)
         run: |
-          npm init -y
-          npm i -D playwright
+          npm install --no-save playwright
           npx playwright install --with-deps chromium
 
       - name: Render PDFs (HTML -> PDF)
