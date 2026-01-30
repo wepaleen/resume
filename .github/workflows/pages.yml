@@ -1,9 +1,9 @@
-name: Build & Deploy Resume
+name: Build & Deploy Resume (EN + RU)
 
 on:
   push:
-    branches: ["master"]   
-    
+    branches: ["master"]
+
 permissions:
   contents: read
   pages: write
@@ -21,28 +21,49 @@ jobs:
 
       - name: Prepare dist
         run: |
-          mkdir -p dist
+          mkdir -p dist dist/ru
           cp style.css dist/style.css
+          cp style.css dist/ru/style.css
 
-      - name: Build HTML
+      # EN -> /
+      - name: Build HTML (EN)
         uses: docker://pandoc/latex:latest
         with:
           args: >
-            resume.md
+            resume.en.md
             --standalone
             --css style.css
             -o dist/index.html
 
-      - name: Build PDF
+      - name: Build PDF (EN)
         uses: docker://pandoc/latex:latest
         with:
           args: >
-            resume.md
+            resume.en.md
             -o dist/resume.pdf
             --pdf-engine=xelatex
             -V geometry:margin=1in
 
-      - name: Upload Pages artifact
+      # RU -> /ru/
+      - name: Build HTML (RU)
+        uses: docker://pandoc/latex:latest
+        with:
+          args: >
+            resume.ru.md
+            --standalone
+            --css style.css
+            -o dist/ru/index.html
+
+      - name: Build PDF (RU)
+        uses: docker://pandoc/latex:latest
+        with:
+          args: >
+            resume.ru.md
+            -o dist/ru/resume.pdf
+            --pdf-engine=xelatex
+            -V geometry:margin=1in
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -53,5 +74,5 @@ jobs:
     environment:
       name: github-pages
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: actions/deploy-pages@v4

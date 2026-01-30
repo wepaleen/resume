@@ -1,11 +1,32 @@
 # Your Name — DevOps Engineer
 
-Kazan (UTC+3) • Remote/Hybrid • Telegram: @wwdcd2 • Email: you@example.com • GitHub: github.com/you • LinkedIn: linkedin.com/in/you
+<div class="split meta">
+  <span>Kazan (UTC+3)</span>
+  <span>•</span>
+  <span>Remote / Hybrid</span>
+  <span>•</span>
+  <span>Telegram: <a href="https://t.me/wwdcd2">@wwdcd2</a></span>
+  <span>•</span>
+  <span><a href="mailto:you@example.com">you@example.com</a></span>
+  <span>•</span>
+  <span><a href="https://github.com/you">GitHub</a></span>
+  <span>•</span>
+  <span><a href="https://linkedin.com/in/you">LinkedIn</a></span>
+</div>
 
-[Download PDF](resume.pdf)
+<div class="split">
+  <a class="btn" href="resume.pdf">Download PDF</a>
+  <span class="meta">•</span>
+  <a class="meta" href="ru/">Русская версия</a>
+</div>
 
 ## Summary
-DevOps Engineer with 2+ years of hands-on experience building and operating Kubernetes-based platforms. Currently migrating workloads from AWS EKS to Yandex Managed Service for Kubernetes (MKS): moving services, setting up environments, and standardizing deployments with Helm. IaC-first (Terraform), configuration automation with Ansible, and a strong focus on observability and predictable releases.
+DevOps Engineer with 2+ years of hands-on experience building and operating Kubernetes-based platforms. Currently migrating workloads from AWS EKS to Yandex Managed Service for Kubernetes (MKS): moving services, setting up environments, and standardizing deployments with Helm. IaC-first (Terraform), configuration automation with Ansible, with a strong focus on observability and predictable releases.
+
+## Selected highlights
+- Migrating Kubernetes from AWS EKS to Yandex MKS (services + environments + deployment standardization).
+- Proxmox: 2 nodes, ~30 VMs across prod/dev/test; VM templates for fast test environment provisioning.
+- GitLab CI optimization: ~30% build time reduction.
 
 ## Experience
 
