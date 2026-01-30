@@ -1,0 +1,54 @@
+name: Build & Deploy Resume (HTML + PDF)
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build HTML & PDF with Pandoc
+        uses: docker://pandoc/latex:latest
+        with:
+          args: >
+            bash -lc "
+              mkdir -p dist &&
+              cp style.css dist/style.css &&
+              pandoc resume.md
+                --standalone
+                --css style.css
+                -o dist/index.html &&
+              pandoc resume.md
+                -o dist/resume.pdf
+                --pdf-engine=xelatex
+                -V geometry:margin=1in
+            "
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
