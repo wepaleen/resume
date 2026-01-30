@@ -1,8 +1,8 @@
 # Ваше Имя — DevOps Engineer
 
-Казань (UTC+3) • Удалённо/гибрид • Telegram: [@wwdcd2](https://t.me/wwdcd2) • [you@example.com](mailto:you@example.com) • [GitHub](https://github.com/you) • [LinkedIn](https://linkedin.com/in/you)
+Казань (UTC+3) • Удалённо / гибрид • Telegram: [@wwdcd2](https://t.me/wwdcd2) • [you@example.com](mailto:you@example.com) • [GitHub](https://github.com/you) • [LinkedIn](https://linkedin.com/in/you)
 
-<a class="btn" href="resume.pdf">Скачать PDF</a> • <a class="lang" href="../">English version</a>
+**[Скачать PDF](resume.pdf){.pill download}** • [English version](../){.switch}
 
 ## Коротко обо мне
 DevOps-инженер с опытом 2+ года. Сейчас веду миграцию Kubernetes-инфраструктуры из AWS EKS в Yandex Managed Service for Kubernetes (MKS): переношу сервисы, настраиваю окружения и стандартизирую деплой через Helm. Инфраструктуру описываю Terraform’ом, конфигурацию серверов автоматизирую Ansible. Фокус — стабильная эксплуатация, наблюдаемость и предсказуемые релизы.

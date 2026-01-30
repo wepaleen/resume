@@ -9,7 +9,6 @@ async function render(inputHtmlPath, outputPdfPath) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  // Чтобы PDF был как "веб", а не как "print-css"
   await page.emulateMedia({ media: "screen", colorScheme: "light" });
 
   const url = "file://" + path.resolve(inputHtmlPath);
