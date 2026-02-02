@@ -188,7 +188,16 @@ small{color:var(--muted)}
 
 @media print{
   html, body{background:#fff}
-  body{max-width:none; margin:0; padding:0; border:0; box-shadow:none; background:#fff}
+  body{
+    max-width:none;
+    margin:0;
+    padding:0;
+    border:0;
+    box-shadow:none;
+    background:#fff;
+    font-size: 11pt;
+    line-height: 1.35;
+  }
   main{margin:0; padding:0; border:0; box-shadow:none; background:#fff}
   a{color:var(--text); text-decoration:none}
   a.pill{
@@ -196,4 +205,17 @@ small{color:var(--muted)}
     padding: 0;
     border-radius: 0;
   }
+  h1{font-size: 28pt; margin-bottom: 6px}
+  h2{
+    margin: 16px 0 6px;
+    padding-top: 8px;
+    border-top: 0;
+    letter-spacing: 0.14em;
+  }
+  h3{margin: 10px 0 2px; font-size: 14px}
+  p{margin: 6px 0}
+  ul{margin: 6px 0 0 16px}
+  li{margin: 3px 0}
+  body > p:nth-of-type(2),
+  main > p:nth-of-type(2){display:none}
 }
