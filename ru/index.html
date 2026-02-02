@@ -28,12 +28,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<h1 id="ваше-имя-devops-engineer">Ваше Имя — DevOps Engineer</h1>
-<p>Казань (UTC+3) • Удалённо / гибрид • Telegram: <a
-href="https://t.me/wwdcd2">@wwdcd2</a> • <a
-href="mailto:you@example.com">you@example.com</a> • <a
-href="https://github.com/you">GitHub</a> • <a
-href="https://linkedin.com/in/you">LinkedIn</a></p>
+<h1 id="ваше-имя">Ваше Имя</h1>
+<p>DevOps Engineer {.role}</p>
+<p>Казань, Россия (UTC+3) • Удалённо / Гибрид {.meta}</p>
+<p><a href="mailto:you@example.com">you@example.com</a> • <a
+href="https://t.me/wwdcd2">t.me/wwdcd2</a> • <a
+href="https://github.com/you">github.com/you</a> • <a
+href="https://linkedin.com/in/you">linkedin.com/in/you</a> {.links}</p>
 <div class="no-print">
 <p><strong><a href="resume.pdf" class="pill" target="_blank"
 rel="noopener">Открыть PDF</a></strong> • <a href="resume.pdf"
@@ -41,50 +42,56 @@ class="switch" download="download">Скачать PDF</a> • <a href="../"
 class="switch">English version</a></p>
 </div>
 <h2 id="коротко-обо-мне">Коротко обо мне</h2>
-<p>Два года работаю DevOps-инженером: Kubernetes, Terraform и CI/CD.
-Веду миграцию 15+ микросервисов из AWS EKS в Yandex MKS (~70% без
-downtime). Ранее сократил время сборки в GitLab CI с 15 до 10 минут
-(~30%), что позволило деплоить в 2 раза чаще.</p>
-<h2 id="ключевые-факты">Ключевые факты</h2>
+<p>Два года работаю DevOps-инженером. Специализируюсь на Kubernetes,
+Terraform и CI/CD автоматизации. Сейчас веду миграцию 15+ микросервисов
+из AWS в Yandex Cloud — перенёс ~70% без downtime. До этого сократил
+время сборки в GitLab CI с 15 до 10 минут (~30%), благодаря чему команда
+стала деплоить в 2 раза чаще. Люблю автоматизировать рутину и делать
+инфраструктуру стабильной.</p>
+<h2 id="ключевые-достижения">Ключевые достижения</h2>
 <ul>
-<li>Миграция 15+ микросервисов AWS EKS → Yandex MKS: 70% перенесено без
-downtime, стандартизирован деплой через Helm.</li>
-<li>GitLab CI: сборка 15 → 10 минут (~30%), релизы стали в 2 раза
-чаще.</li>
+<li>Облачная миграция: 15+ микросервисов AWS EKS → Yandex MKS | 70% без
+downtime | стандартизирован деплой через Helm.</li>
+<li>CI/CD: сборка 15 → 10 минут (~30%), частота релизов 2x.</li>
+<li>Автоматизация инцидентов: Telegram-бот для Jira и Zabbix | реакция
+30 → 15 минут (50%).</li>
 </ul>
-<h2 id="опыт">Опыт</h2>
+<h2 id="опыт-работы">Опыт работы</h2>
 <h3 id="devops-engineer-ак-барс-банк">DevOps Engineer — АК БАРС
 БАНК</h3>
 <p><em>Казань • июнь 2025 — настоящее время</em></p>
 <ul>
-<li>Веду миграцию 15+ микросервисов AWS EKS → Yandex MKS (70% перенесено
-без downtime); стандартизировал деплой через Helm.</li>
-<li>Управляю инфраструктурой в Yandex Cloud через Terraform;
-автоматизирую конфигурацию серверов Ansible (Nginx, PostgreSQL,
-monitoring agents).</li>
-<li>Администрирую Proxmox-кластер (2 ноды, ~30 VM под prod/dev/test) и
-поддерживаю наблюдаемость в ELK/Zabbix.</li>
+<li>Веду миграцию 15+ микросервисов AWS EKS → Yandex MKS: 70% перенесено
+без downtime; стандартизировал Helm-деплой.</li>
+<li>Управляю Yandex Cloud через Terraform и Ansible: ускорил
+provisioning с 2 ч до 15 мин, конфигурацию серверов с 4 ч до 20
+мин.</li>
+<li>Администрирую Proxmox-кластер (2 ноды, 30+ VM) и поддерживаю
+наблюдаемость в ELK/Zabbix.</li>
 </ul>
 <h3 id="devops-automation-engineer-барс-груп">DevOps / Automation
 Engineer — БАРС Груп</h3>
 <p><em>Казань • февраль 2024 — июнь 2025</em></p>
 <ul>
-<li>Автоматизировал оформление инцидентов: Jira REST API + Telegram-бот;
-подтвердил события Zabbix через Telegram и ускорил реакцию.</li>
-<li>Оптимизировал пайплайны GitLab CI: 15 → 10 минут (~30%).</li>
-<li>Участвовал в переносе монолитного сервиса в Kubernetes и сопровождал
-CDC на базе Debezium (Oracle → PostgreSQL).</li>
+<li>Разработал Telegram-бота для Jira — сократил время реакции с 30 до
+15 минут (50%); настроил подтверждение Zabbix-событий через бота.</li>
+<li>Оптимизировал GitLab CI: 15 → 10 минут (~30%), релизы 2x.</li>
+<li>Участвовал в миграции legacy монолита в Kubernetes и сопровождал CDC
+(Debezium: Oracle → PostgreSQL).</li>
+<li>Настроил дашборды Grafana и алерты Zabbix.</li>
 </ul>
 <h2 id="проекты">Проекты</h2>
 <ul>
-<li>Homelab k3s-кластер на Raspberry Pi (ArgoCD, Istio); делюсь
-заметками о миграции в k8s в Telegram-канале (50+ подписчиков).</li>
+<li>Homelab: k3s на 3x Raspberry Pi с ArgoCD и Istio для практики.</li>
+<li>Telegram-канал про Kubernetes и DevOps (50+ подписчиков).</li>
 </ul>
 <h2 id="навыки">Навыки</h2>
-<p>Kubernetes (EKS, k0s, Yandex MKS) • Helm • Docker • Terraform •
-Ansible • GitLab CI • Bamboo • Bitbucket • Linux • Proxmox • ELK •
-Zabbix • Prometheus/Grafana • PostgreSQL • Kafka • Redis • Nginx • Bash
-• DNS • SQL</p>
+<p>Основное: Kubernetes (EKS, k0s, Yandex MKS) • Docker • Helm •
+Terraform • Ansible CI/CD: GitLab CI • Bamboo • Bitbucket • Git
+Наблюдаемость: Prometheus • Grafana • ELK Stack • Zabbix Данные:
+PostgreSQL • Redis • Kafka • Nginx Инфраструктура: Linux (Ubuntu,
+Debian) • Proxmox • Bash • DNS Облака: AWS • Yandex Cloud • GCP
+(базовый)</p>
 <h2 id="образование">Образование</h2>
 <p>Бакалавр (ИТ), 2024</p>
 <h2 id="языки">Языки</h2>
