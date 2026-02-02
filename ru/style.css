@@ -195,8 +195,11 @@ small{color:var(--muted)}
     border:0;
     box-shadow:none;
     background:#fff;
-    font-size: 10pt;
-    line-height: 1.18;
+    font-size: 11pt;
+    line-height: 1.3;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
   }
   main{margin:0; padding:0; border:0; box-shadow:none; background:#fff}
   a{color:var(--text); text-decoration:none}
@@ -205,17 +208,17 @@ small{color:var(--muted)}
     padding: 0;
     border-radius: 0;
   }
-  h1{font-size: 24pt; margin-bottom: 3px}
+  h1{font-size: 27pt; margin-bottom: 6px}
   h2{
-    margin: 10px 0 3px;
-    padding-top: 4px;
+    margin: 14px 0 6px;
+    padding-top: 6px;
     border-top: 0;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.14em;
   }
-  h3{margin: 6px 0 2px; font-size: 12px}
-  p{margin: 3px 0}
-  ul{margin: 3px 0 0 12px}
-  li{margin: 1px 0}
-  em{font-size: 0.9rem}
+  h3{margin: 8px 0 2px; font-size: 13px}
+  p{margin: 5px 0}
+  ul{margin: 5px 0 0 16px}
+  li{margin: 3px 0}
+  em{font-size: 0.95rem}
   .no-print{display:none !important}
 }
